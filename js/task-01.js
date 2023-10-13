@@ -17,7 +17,15 @@ const tableUsers = table.querySelectorAll('.user');
 console.log(`Number of users: ${tableUsers.length}`);
 
 tableUsers.forEach((user) => {
-  const userName = user.querySelector('td').textContent[Name];
-  const userCountry = user.querySelector
-  console.log(`${userName}, ${Country}`);
-})
+  const userName = user.firstElementChild.textContent.split(" : ");
+  
+  const userCountry = user.lastElementChild.textContent.split(' : ')
+  console.log(`${userName}, ${userCountry}`);
+
+  const userAge = user.querySelector('td:nth-child(2)').textContent;
+  const age = parseInt(userAge.split(': '))
+  const totalAge = [];
+  // console.log(middleUserAge);
+  console.log(userAge)
+});
+
